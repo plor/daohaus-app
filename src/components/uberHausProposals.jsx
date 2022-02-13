@@ -98,7 +98,7 @@ const UberHausProposals = ({ uberHausMinion, uberMembers, uberDelegate }) => {
   };
   return (
     <Menu isDisabled>
-      <MenuButton as={Button} size='lg'>
+      <MenuButton as={Button} size='lg' mt={2}>
         Manage
       </MenuButton>
       <MenuList>

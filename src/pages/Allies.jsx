@@ -3,10 +3,10 @@ import { useParams } from 'react-router-dom';
 import { Box, Button, Flex } from '@chakra-ui/react';
 
 import { useInjectedProvider } from '../contexts/InjectedProviderContext';
-import { useOverlay } from '../contexts/OverlayContext';
+// import { useOverlay } from '../contexts/OverlayContext';
 import { useSessionStorage } from '../hooks/useSessionStorage';
 import DaoToDaoManager from '../components/daoToDaoManager';
-import DaoToDaoProposalModal from '../modals/daoToDaoProposalModal';
+// import DaoToDaoProposalModal from '../modals/daoToDaoProposalModal';
 import DaoToDaoProposalTypeModal from '../modals/daoToDaoProposalTypeModal';
 import GenericModal from '../modals/genericModal';
 import MainViewLayout from '../components/mainViewLayout';
@@ -31,7 +31,7 @@ const Allies = ({
   const [uberOverview, setUberOveriew] = useSessionStorage('U-overview', null);
   const [uberMembers, setUberMembers] = useSessionStorage('U-members', null);
   const [uberDelegate, setUberDelegate] = useState(null);
-  const { d2dProposalModal } = useOverlay();
+  // const { d2dProposalModal } = useOverlay();
   const [proposalType, setProposalType] = useState(null);
   const { address, requestWallet } = useInjectedProvider();
 
@@ -134,7 +134,7 @@ const Allies = ({
     <MainViewLayout header='Allies' isDao>
       <Box>
         <DaoToDaoProposalTypeModal isOpen setProposalType={setProposalType} />
-        <DaoToDaoProposalModal
+        {/* <DaoToDaoProposalModal
           isOpen={d2dProposalModal}
           proposalType={proposalType}
           daoMembers={daoMembers}
@@ -143,7 +143,7 @@ const Allies = ({
           uberHausMinion={uberHausMinion}
           uberOverview={uberOverview}
           refetchAllies={refetchAllies}
-        />
+        /> */}
         <GenericModal closeOnOverlayClick modalId='uberMinionLaunch'>
           <NewUberHausMinion
             daoMembers={daoMembers}
