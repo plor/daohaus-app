@@ -134,16 +134,6 @@ const Allies = ({
     <MainViewLayout header='Allies' isDao>
       <Box>
         <DaoToDaoProposalTypeModal isOpen setProposalType={setProposalType} />
-        {/* <DaoToDaoProposalModal
-          isOpen={d2dProposalModal}
-          proposalType={proposalType}
-          daoMembers={daoMembers}
-          uberMembers={uberMembers}
-          uberDelegate={uberDelegate}
-          uberHausMinion={uberHausMinion}
-          uberOverview={uberOverview}
-          refetchAllies={refetchAllies}
-        /> */}
         <GenericModal closeOnOverlayClick modalId='uberMinionLaunch'>
           <NewUberHausMinion
             daoMembers={daoMembers}
