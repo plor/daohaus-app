@@ -3,25 +3,14 @@ import { useParams } from 'react-router-dom';
 import { Box, Button, Flex } from '@chakra-ui/react';
 
 import { useInjectedProvider } from '../contexts/InjectedProviderContext';
-// import { useOverlay } from '../contexts/OverlayContext';
 import { useSessionStorage } from '../hooks/useSessionStorage';
 import DaoToDaoManager from '../components/daoToDaoManager';
-// import DaoToDaoProposalModal from '../modals/daoToDaoProposalModal';
-import DaoToDaoProposalTypeModal from '../modals/daoToDaoProposalTypeModal';
-import GenericModal from '../modals/genericModal';
 import MainViewLayout from '../components/mainViewLayout';
-import NewUberHausMinion from '../forms/newUberHausMinion';
 import { UberHausMinionService } from '../services/uberHausMinionService';
 import { bigGraphQuery } from '../utils/theGraph';
 import { UBERHAUS_DATA } from '../utils/uberhaus';
 
-const Allies = ({
-  daoOverview,
-  daoMetaData,
-  isMember,
-  proposals,
-  daoMembers,
-}) => {
+const Allies = ({ daoOverview, daoMetaData, isMember, proposals }) => {
   const { daoid } = useParams();
 
   const [uberProposals, setUberProposals] = useSessionStorage(
@@ -31,8 +20,6 @@ const Allies = ({
   const [uberOverview, setUberOveriew] = useSessionStorage('U-overview', null);
   const [uberMembers, setUberMembers] = useSessionStorage('U-members', null);
   const [uberDelegate, setUberDelegate] = useState(null);
-  // const { d2dProposalModal } = useOverlay();
-  const [proposalType, setProposalType] = useState(null);
   const { address, requestWallet } = useInjectedProvider();
 
   const hasPerformedBatchQuery = useRef(false);
@@ -133,20 +120,10 @@ const Allies = ({
   return (
     <MainViewLayout header='Allies' isDao>
       <Box>
-        <DaoToDaoProposalTypeModal isOpen setProposalType={setProposalType} />
-        <GenericModal closeOnOverlayClick modalId='uberMinionLaunch'>
-          <NewUberHausMinion
-            daoMembers={daoMembers}
-            uberHausMinion={uberHausMinion}
-            uberMembers={uberMembers}
-            uberDelegate={uberDelegate}
-          />
-        </GenericModal>
         <DaoToDaoManager
           uberDelegate={uberDelegate}
           daoOverview={daoOverview}
           daoMetaData={daoMetaData}
-          setProposalType={setProposalType}
           isMember={isMember}
           uberProposals={uberProposals}
           uberMembers={uberMembers}
