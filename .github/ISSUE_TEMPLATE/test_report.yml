@@ -1,5 +1,5 @@
 name: Test Report
-descripton: Detail test cases that need addressing
+description: Detail test cases that need addressing
 labels: ["bug"]
 body:
 - type: input
