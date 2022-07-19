@@ -38,7 +38,9 @@ body:
     required: true
 - type: textarea
   attributes:
-    label: Additional context
-    placeholder: "Place additional information or screenshots that will help address this issue here."
+    label: Screenshots and context
+    placeholder: |
+      Place additional information that will help address this issue here.
+      You can add screenshots by pasting from your clipboard.
   validations:
     required: false
