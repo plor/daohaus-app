@@ -6,7 +6,7 @@ body:
   attributes:
     label: Feature
     description: What feature are you testing?
-    placeholder: Example: summon new DAO
+    placeholder: "Example: summon new DAO"
   validations:
     required: true
 - type: textarea
@@ -40,3 +40,5 @@ body:
   attributes:
     label: Additional context
     placeholder: "Place additional information or screenshots that will help address this issue here."
+  validations:
+    required: false
