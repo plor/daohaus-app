@@ -27,13 +27,13 @@ body:
     description: Which browser is this issue occuring in?
     multiple: true
     options:
-      - label: N/A
-      - label: Firefox
-      - label: Chrome
-      - label: Brave
-      - label: Safari
-      - label: Internet Explorer
-      - label: Other
+      - N/A
+      - Firefox
+      - Chrome
+      - Brave
+      - Safari
+      - Internet Explorer
+      - Other
   validations:
     required: true
 - type: textarea
